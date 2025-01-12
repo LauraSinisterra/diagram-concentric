@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Workbench&family=Xanh+Mono:ital@0;1&display=swap');
+
+@keyframes spin-stamps {
+    0% {  transform: translate(-50%, -50%) rotate(0deg); }
+    100% {  transform: translate(-50%, -50%) rotate(360deg); }
+}
+@keyframes spin {
+    0% {  transform: rotate(0deg); }
+    100% {  transform: rotate(360deg); }
+}
+.workbench-project {
+    font-family: "Workbench", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "BLED" 0,
+      "SCAN" -48;
+}
+html, body {
+    font-family: "Fragment mono", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(assets/grid.svg);
+    background-size: contain;
+    background-position: 100% 100%;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+header {
+    position: fixed;
+    top: 0;
+    width: 96%;
+    background-color: #fafafa;
+    border: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px;
+    padding: 0;
+    transition: all 1s;
+    z-index: 1;
+}
+header.scrolled {
+    opacity: 80%;
+}
+div.title {
+    border-right: #333 solid 1px;
+    margin: 0;
+    padding: 8px 16px;
+}
+h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 4vmin;
+    font-family: "Workbench", serif;
+    letter-spacing: -0.1px;
+}
+a {
+    font-family: "Xanh Mono", serif;
+    font-size: 2vmin;
+    text-decoration: none;
+}
+p {
+    font-size: 2vmin;
+    margin: 0;
+    padding: 0;
+}
+nav {
+    margin: 0;
+    padding: 8px;
+}
+nav a {
+    margin: 0;
+    padding: 0 4px;
+    border: #333 1px solid;
+    border-radius: 1px;
+    transition: all 0.1s;
+}
+nav a:hover {
+    box-shadow: 2px 2px 0 #333;
+}
+section {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+div.square {
+    margin-bottom: 48px;
+}
+div.diagram {
+    position: relative;
+    margin-bottom: 48px;
+}
+div.circle {
+    position: absolute;
+    top: 68%;
+    left: 80%;
+}
+div.circle-right {
+    left: 50%;
+    border-radius: 100%;
+}
+div.circle-left {
+    top: 36%;
+    left: 50%;
+}
+div.circle div {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 33px;
+    height: 33px;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    border: #333 1px solid;
+}
+div.circle-top {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    animation: spin 200s linear infinite;
+}
+div.circle-top-dashed {
+    position: absolute;
+    top: 0%;
+    left: 19%;
+    animation: spin 90s linear infinite;
+}
+div.ellipse {
+    position: absolute;
+    top: 38%;
+    animation: spin 120s linear infinite;
+}
+div.stamps {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+}
+
+div.stamps img {
+    position: absolute;
+    animation: spin-stamps 80s linear infinite;
+}
